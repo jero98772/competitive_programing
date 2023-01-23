@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int n;
-string s,s1,minS;
+string s1,minS;
 bool mini(string s1,string s2){
 	int check=false;
 	for(int i=0;i<n;i++){
@@ -27,12 +27,13 @@ void addOne(){
 			s1[i]++;
 	}
 }
-void rigthShift(){
+void rigthShift(string &s){
 	s=s.substr(n-1,1)+s.substr(0,n-1);
 }
 int main(){
+	
 	cin>>n;
-	cin>>s;
+	string s;cin>>s;
 	minS=s;
 	for(int i=0;i<n;i++){
 		s1=s;
@@ -41,7 +42,7 @@ int main(){
 			if(mini(minS,s1))
 				minS=s1;
 		}
-		rigthShift();
+		rigthShift(s);
 		if(mini(minS,s1))
 			minS=s1;
 	}
