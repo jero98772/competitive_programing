@@ -1,0 +1,2 @@
+import stdout
+stdout.flush()
